@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
-app.get('/jenkins', (req, res) => {
+app.post('/jenkins', (req, res) => {
 
     var str = "this";
     var url = "http://34.94.219.43:8080/job/slack-notification/api/json";
@@ -29,5 +29,5 @@ app.get('/jenkins', (req, res) => {
           res.send(str);
         }
     );
-res.end;
+  res.end;
   })
