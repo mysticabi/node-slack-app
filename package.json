@@ -1,22 +1,28 @@
-
-   
 {
-  "name": "@slack/express-all-interactions",
-  "private": true,
-  "description": "An example of using Slack Interactive Messages for Node",
-  "main": "index.js",
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
   "scripts": {
-    "start": "node -r dotenv/config server",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "test"
   },
-  "author": "Ankur Oberoi <aoberoi@gmail.com>",
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mysticabi/node-slack-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mysticabi/node-slack-app/issues"
+  },
+  "homepage": "https://github.com/mysticabi/node-slack-app#readme",
   "dependencies": {
-    "@slack/interactive-messages": "^1.1.1",
-    "@slack/web-api": "^5.0.0",
-    "axios": "^0.21.1",
-    "body-parser": "^1.18.2",
-    "dotenv": "^5.0.1",
-    "express": "^4.16.3"
+    "@slack/interactive-messages": "^2.0.2",
+    "@slack/web-api": "^6.4.0",
+    "axios": "^0.21.4",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "request": "^2.88.2",
+    "slack": "^11.0.2"
   }
 }
