@@ -31,3 +31,22 @@ app.post('/jenkins', (req, res) => {
     );
   res.end;
   })
+
+  app.post('/products', (req, res) => {
+    // ID of the channel you want to send the message to
+    const channelId = "A02FW72ERAR";
+
+    try {
+      // Call the chat.postMessage method using the WebClient
+      const result = await client.chat.postMessage({
+        channel: channelId,
+        text: "Hello world"
+      });
+
+      console.log(result);
+    }
+    catch (error) {
+      console.error(error);
+    }
+
+  })
