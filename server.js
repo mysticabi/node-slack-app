@@ -146,28 +146,153 @@ slackInteractions.action({ type: 'dialog_submission' }, (payload, respond) => {
 
 // Example interactive messages
 const interactiveButtons = {
-  text: 'The terms of service for this app are _not really_ here: <https://unsplash.com/photos/bmmcfZqSjBU>',
-  response_type: 'in_channel',
-  attachments: [{
-    text: 'Do you accept the terms of service?',
-    callback_id: 'accept_tos',
-    actions: [
-      {
-        name: 'accept_tos',
-        text: 'Yes',
-        value: 'accept',
-        type: 'button',
-        style: 'primary',
-      },
-      {
-        name: 'accept_tos',
-        text: 'No',
-        value: 'deny',
-        type: 'button',
-        style: 'danger',
-      },
-    ],
-  }],
+	"blocks": [
+		{
+			"type": "header",
+			"text": {
+				"type": "plain_text",
+				"text": "This is a header block",
+				"emoji": true
+			}
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "Available products"
+			},
+			"accessory": {
+				"type": "overflow",
+				"options": [
+					{
+						"text": {
+							"type": "plain_text",
+							"emoji": true,
+							"text": "Option One"
+						},
+						"value": "value-0"
+					},
+					{
+						"text": {
+							"type": "plain_text",
+							"emoji": true,
+							"text": "Option Two"
+						},
+						"value": "value-1"
+					},
+					{
+						"text": {
+							"type": "plain_text",
+							"emoji": true,
+							"text": "Option Three"
+						},
+						"value": "value-2"
+					},
+					{
+						"text": {
+							"type": "plain_text",
+							"emoji": true,
+							"text": "Option Four"
+						},
+						"value": "value-3"
+					}
+				]
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "*<fakeLink.toHotelPage.com|Windsor Court Hotel>*\n★★★★★\n$340 per night\nRated: 9.4 - Excellent"
+			},
+			"accessory": {
+				"type": "image",
+				"image_url": "https://api.slack.com/img/blocks/bkb_template_images/tripAgent_1.png",
+				"alt_text": "Windsor Court Hotel thumbnail"
+			}
+		},
+		{
+			"type": "context",
+			"elements": [
+				{
+					"type": "image",
+					"image_url": "https://api.slack.com/img/blocks/bkb_template_images/tripAgentLocationMarker.png",
+					"alt_text": "Location Pin Icon"
+				},
+				{
+					"type": "plain_text",
+					"emoji": true,
+					"text": "Location: Central Business District"
+				}
+			]
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "*<fakeLink.toHotelPage.com|The Ritz-Carlton New Orleans>*\n★★★★★\n$340 per night\nRated: 9.1 - Excellent"
+			},
+			"accessory": {
+				"type": "image",
+				"image_url": "https://api.slack.com/img/blocks/bkb_template_images/tripAgent_2.png",
+				"alt_text": "Ritz-Carlton New Orleans thumbnail"
+			}
+		},
+		{
+			"type": "context",
+			"elements": [
+				{
+					"type": "image",
+					"image_url": "https://api.slack.com/img/blocks/bkb_template_images/tripAgentLocationMarker.png",
+					"alt_text": "Location Pin Icon"
+				},
+				{
+					"type": "plain_text",
+					"emoji": true,
+					"text": "Location: French Quarter"
+				}
+			]
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "*<fakeLink.toHotelPage.com|Omni Royal Orleans Hotel>*\n★★★★★\n$419 per night\nRated: 8.8 - Excellent"
+			},
+			"accessory": {
+				"type": "image",
+				"image_url": "https://api.slack.com/img/blocks/bkb_template_images/tripAgent_3.png",
+				"alt_text": "Omni Royal Orleans Hotel thumbnail"
+			}
+		},
+		{
+			"type": "context",
+			"elements": [
+				{
+					"type": "image",
+					"image_url": "https://api.slack.com/img/blocks/bkb_template_images/tripAgentLocationMarker.png",
+					"alt_text": "Location Pin Icon"
+				},
+				{
+					"type": "plain_text",
+					"emoji": true,
+					"text": "Location: French Quarter"
+				}
+			]
+		},
+		{
+			"type": "divider"
+		}
+	]
 };
 
 const interactiveMenu = {
@@ -209,13 +334,13 @@ const dialog = {
 
 // Slack slash command handler
 function slackSlashCommand(req, res, next) {
-  if (req.body.command === '/interactive-example') {
+  if (req.body.command === '/estore') {
     const type = req.body.text.split(' ')[0];
-    if (type === 'button') {
+    if (type === 'products') {
       res.json(interactiveButtons);
-    } else if (type === 'menu') {
+    } else if (type === 'cart') {
       res.json(interactiveMenu);
-    } else if (type === 'dialog') {
+    } else if (type === 'checkout') {
       res.send();
       (async () => {
         try {
@@ -231,7 +356,7 @@ function slackSlashCommand(req, res, next) {
         }
       })();
     } else {
-      res.send('Use this command followed by `button`, `menu`, or `dialog`.');
+      res.send('Use this command followed by `products`, `cart`, or `checkout`.');
     }
   } else {
     next();
