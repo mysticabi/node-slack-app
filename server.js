@@ -51,7 +51,8 @@ const interactiveButtons = {
 						"emoji": true
 					},
 					"style": "primary",
-					"value": "list_products"
+					"value": "list_products",
+					"action_id": "list_products"
 				},
 				{
 					"type": "button",
@@ -60,7 +61,8 @@ const interactiveButtons = {
 						"text": "Review Cart",
 						"emoji": true
 					},
-					"value": "review_cart"
+					"value": "review_cart",
+					"action_id": "review_cart"
 				},
 				{
 					"type": "button",
@@ -69,7 +71,8 @@ const interactiveButtons = {
 						"text": "Checkout",
 						"emoji": true
 					},
-					"value": "checkout"
+					"value": "checkout",
+					"action_id": "checkout"
 				}
 			]
 		}
