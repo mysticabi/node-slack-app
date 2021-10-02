@@ -2,32 +2,63 @@ const { App, LogLevel } = require('@slack/bolt');
 
 const slackSigningSecret = '';
 const slackAccessToken = '';
-const slackAppToken = '';
 
-const expressReceiver = new ExpressReceiver({
-    signingSecret: slackSigningSecret,
-    processBeforeResponse: true
-  });
 
 // Initializes your app with your bot token and signing secret
 const app = new App({
   token: slackAccessToken,
   signingSecret: slackSigningSecret,
-  logLevel: LogLevel.DEBUG,
-  socketMode: true,
-  appToken: slackAppToken
-
+  logLevel: LogLevel.DEBUG
 });
 
-app.message('hello', async ({ message, say }) => {
-    // say() sends a message to the channel where the event was triggered
-    await say(`Hey there <@${message.user}>!`);
-  });
-
 // Listens to incoming messages that contain "hello"
-app.command('/estore', async ({ command, ack, respond }) => {
-  ack();
-  await respond('test this');
+app.command('/estore', async ({ command, ack, say }) => {
+
+    await ack();
+    let message = { blocks: [{
+        "type": "header",
+        "text": {
+            "type": "plain_text",
+            "text": "Welcome to eSwag! Choose the options below"
+        }
+    },
+    {
+        "type": "actions",
+        "elements": [
+            {
+                "type": "button",
+                "text": {
+                    "type": "plain_text",
+                    "text": "List Products",
+                    "emoji": true
+                },
+                "style": "primary",
+                "value": "list_products",
+                "action_id": "list_products"
+            },
+            {
+                "type": "button",
+                "text": {
+                    "type": "plain_text",
+                    "text": "Review Cart",
+                    "emoji": true
+                },
+                "value": "review_cart",
+                "action_id": "review_cart"
+            },
+            {
+                "type": "button",
+                "text": {
+                    "type": "plain_text",
+                    "text": "Checkout",
+                    "emoji": true
+                },
+                "value": "checkout",
+                "action_id": "checkout"
+            }
+        ]
+    }] };
+
 });
 
 app.action('list_products', async ({ body, ack, say }) => {
