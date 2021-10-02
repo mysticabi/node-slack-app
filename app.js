@@ -1,7 +1,8 @@
-const { App, ExpressReceiver, LogLevel } = require('@slack/bolt');
+const { App, LogLevel } = require('@slack/bolt');
 
 const slackSigningSecret = '';
 const slackAccessToken = '';
+const slackAppToken = '';
 
 const expressReceiver = new ExpressReceiver({
     signingSecret: slackSigningSecret,
@@ -13,8 +14,15 @@ const app = new App({
   token: slackAccessToken,
   signingSecret: slackSigningSecret,
   logLevel: LogLevel.DEBUG,
-  receiver: expressReceiver
+  socketMode: true,
+  appToken: slackAppToken
+
 });
+
+app.message('hello', async ({ message, say }) => {
+    // say() sends a message to the channel where the event was triggered
+    await say(`Hey there <@${message.user}>!`);
+  });
 
 // Listens to incoming messages that contain "hello"
 app.command('/estore', async ({ command, ack, respond }) => {
