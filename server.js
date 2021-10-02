@@ -1,4 +1,3 @@
-const {App} = require('@slack/bolt');
 const http = require('http');
 const express = require('express');
 const { createMessageAdapter } = require('@slack/interactive-messages');
@@ -7,13 +6,13 @@ const { users, neighborhoods } = require('./models');
 const axios = require('axios');
 const bodyParser = require('body-parser');
 const slackSigningSecret = '4f5bc0a746b803da2eedc471ecd45d5c';
-const slackAccessToken = 'xoxb-2491257843379-2566898424480-sAGSNVDVaqKrR5X5Zm7zZhSQ';
+const slackAccessToken = 'xapp-1-A02FW72ERAR-2555021190308-379274b046dfa2265864e0c81e4897d7054fe2c6864838e2a65b7f2ac66feea6';
 
 // Create the adapter using the app's signing secret
-//const slackInteractions = createMessageAdapter(slackSigningSecret);
+const slackInteractions = createMessageAdapter(slackSigningSecret);
 
 // Create a Slack Web API client using the access token
-//const web = new WebClient(slackAccessToken);
+const web = new WebClient(slackAccessToken);
 
 // Initialize an Express application
 const app = express();
@@ -29,17 +28,7 @@ http.createServer(app).listen(port, () => {
   console.log(`server listening on port ${port}`);
 });
 
-// Initializes your app with your bot token and signing secret
-const bolt = new App({
-  token: slackAccessToken,
-  signingSecret: slackSigningSecret
-});
 
-bolt.action('list_products', async ({ body, ack, say }) => {
-  // Acknowledge the action
-  await ack();
-  await say(`<@${body.user.id}> here are the`);
-});
 
 // Example interactive messages
 const interactiveButtons = {
