@@ -1,21 +1,24 @@
-const { App } = require('@slack/bolt');
+const { App, ExpressReceiver, LogLevel } = require('@slack/bolt');
 
 const slackSigningSecret = '';
 const slackAccessToken = '';
 
+const expressReceiver = new ExpressReceiver({
+    signingSecret: slackSigningSecret,
+    processBeforeResponse: true
+  });
 
 // Initializes your app with your bot token and signing secret
 const app = new App({
   token: slackAccessToken,
-  signingSecret: slackSigningSecret
+  signingSecret: slackSigningSecret,
+  logLevel: LogLevel.DEBUG,
+  receiver: expressReceiver
 });
-
 
 // Listens to incoming messages that contain "hello"
 app.command('/estore', async ({ command, ack, respond }) => {
-  // say() sends a message to the channel where the event was triggered
-
-  await ack();
+  ack();
   await respond('test this');
 });
 
@@ -23,12 +26,6 @@ app.action('list_products', async ({ body, ack, say }) => {
   // Acknowledge the action
   await ack();
   await say(`<@${body.user.id}> clicked the button`);
-});
-
-// Listens to incoming messages that contain "goodbye"
-app.message('goodbye', async ({ message, say }) => {
-  // say() sends a message to the channel where the event was triggered
-  await say(`See ya later, <@${message.user}> :wave:`);
 });
 
 (async () => {
