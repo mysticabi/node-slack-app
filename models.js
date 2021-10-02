@@ -347,3 +347,13 @@ const checkOutView = {
 		}
 	]
 }
+
+
+module.exports = {
+  checkOutView,
+  welcomeView,
+  productListView,
+  cartView
+
+
+}
