@@ -1,7 +1,7 @@
 const { App } = require('@slack/bolt');
 
 const slackSigningSecret = '4f5bc0a746b803da2eedc471ecd45d5c';
-const slackAccessToken = 'xoxb-2491257843379-2566898424480-DjxICSVDobX6wz3oCBdIGBw7';
+const slackAccessToken = 'xoxb-2491257843379-2566898424480-JsWKRu6FtUrXkcW2lOMboCfL';
 
 
 // Initializes your app with your bot token and signing secret
