@@ -1,53 +1,349 @@
-const axios = require('axios');
+const cartView = 
+    {
+        "blocks": [
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": "*Currently available products.*"
+                }
+            },
+            {
+                "type": "divider"
+            },
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": "*This is a section* \n \nblock with an accessory image."
+                },
+                "accessory": {
+                    "type": "image",
+                    "image_url": "https://pbs.twimg.com/profile_images/625633822235693056/lNGUneLX_400x400.jpg",
+                    "alt_text": "cute cat"
+                }
+            },
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": " "
+                },
+                "accessory": {
+                    "type": "button",
+                    "text": {
+                        "type": "plain_text",
+                        "text": "Add to Cart",
+                        "emoji": true
+                    },
+                    "value": "click_me_123",
+                    "action_id": "button-action"
+                }
+            },
+            {
+                "type": "divider"
+            },
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": "*This is a section* \n \nblock with an accessory image."
+                },
+                "accessory": {
+                    "type": "image",
+                    "image_url": "https://pbs.twimg.com/profile_images/625633822235693056/lNGUneLX_400x400.jpg",
+                    "alt_text": "cute cat"
+                }
+            },
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": " "
+                },
+                "accessory": {
+                    "type": "button",
+                    "text": {
+                        "type": "plain_text",
+                        "text": "Add to Cart",
+                        "emoji": true
+                    },
+                    "value": "click_me_123",
+                    "action_id": "button-action"
+                }
+            },
+            {
+                "type": "divider"
+            },
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": "*This is a section* \n \nblock with an accessory image."
+                },
+                "accessory": {
+                    "type": "image",
+                    "image_url": "https://pbs.twimg.com/profile_images/625633822235693056/lNGUneLX_400x400.jpg",
+                    "alt_text": "cute cat"
+                }
+            },
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": " "
+                },
+                "accessory": {
+                    "type": "button",
+                    "text": {
+                        "type": "plain_text",
+                        "text": "Add to Cart",
+                        "emoji": true
+                    },
+                    "value": "click_me_123",
+                    "action_id": "button-action"
+                }
+            },
+            {
+                "type": "divider"
+            },
+            {
+                "type": "actions",
+                "elements": [
+                    {
+                        "type": "button",
+                        "text": {
+                            "type": "plain_text",
+                            "text": "Previous",
+                            "emoji": true
+                        },
+                        "value": "previous"
+                    },
+                    {
+                        "type": "button",
+                        "text": {
+                            "type": "plain_text",
+                            "text": "Next",
+                            "emoji": true
+                        },
+                        "value": "next"
+                    }
+                ]
+            }
+        ]
+    };
+const productListView = 
+        {
+            "blocks": [
+                {
+                    "type": "section",
+                    "text": {
+                        "type": "mrkdwn",
+                        "text": "*Currently available products.*"
+                    }
+                },
+                {
+                    "type": "divider"
+                },
+                {
+                    "type": "section",
+                    "text": {
+                        "type": "mrkdwn",
+                        "text": "*This is a section* \n \nblock with an accessory image."
+                    },
+                    "accessory": {
+                        "type": "image",
+                        "image_url": "https://pbs.twimg.com/profile_images/625633822235693056/lNGUneLX_400x400.jpg",
+                        "alt_text": "cute cat"
+                    }
+                },
+                {
+                    "type": "section",
+                    "text": {
+                        "type": "mrkdwn",
+                        "text": " "
+                    },
+                    "accessory": {
+                        "type": "button",
+                        "text": {
+                            "type": "plain_text",
+                            "text": "Add to Cart",
+                            "emoji": true
+                        },
+                        "value": "click_me_123",
+                        "action_id": "button-action"
+                    }
+                },
+                {
+                    "type": "divider"
+                },
+                {
+                    "type": "section",
+                    "text": {
+                        "type": "mrkdwn",
+                        "text": "*This is a section* \n \nblock with an accessory image."
+                    },
+                    "accessory": {
+                        "type": "image",
+                        "image_url": "https://pbs.twimg.com/profile_images/625633822235693056/lNGUneLX_400x400.jpg",
+                        "alt_text": "cute cat"
+                    }
+                },
+                {
+                    "type": "section",
+                    "text": {
+                        "type": "mrkdwn",
+                        "text": " "
+                    },
+                    "accessory": {
+                        "type": "button",
+                        "text": {
+                            "type": "plain_text",
+                            "text": "Add to Cart",
+                            "emoji": true
+                        },
+                        "value": "click_me_123",
+                        "action_id": "button-action"
+                    }
+                },
+                {
+                    "type": "divider"
+                },
+                {
+                    "type": "section",
+                    "text": {
+                        "type": "mrkdwn",
+                        "text": "*This is a section* \n \nblock with an accessory image."
+                    },
+                    "accessory": {
+                        "type": "image",
+                        "image_url": "https://pbs.twimg.com/profile_images/625633822235693056/lNGUneLX_400x400.jpg",
+                        "alt_text": "cute cat"
+                    }
+                },
+                {
+                    "type": "section",
+                    "text": {
+                        "type": "mrkdwn",
+                        "text": " "
+                    },
+                    "accessory": {
+                        "type": "button",
+                        "text": {
+                            "type": "plain_text",
+                            "text": "Add to Cart",
+                            "emoji": true
+                        },
+                        "value": "click_me_123",
+                        "action_id": "button-action"
+                    }
+                },
+                {
+                    "type": "divider"
+                },
+                {
+                    "type": "actions",
+                    "elements": [
+                        {
+                            "type": "button",
+                            "text": {
+                                "type": "plain_text",
+                                "text": "Previous",
+                                "emoji": true
+                            },
+                            "value": "previous"
+                        },
+                        {
+                            "type": "button",
+                            "text": {
+                                "type": "plain_text",
+                                "text": "Next",
+                                "emoji": true
+                            },
+                            "value": "next"
+                        }
+                    ]
+                }
+            ]
+        };
 
-// Create a Promise that resolves after a full turn of the event loop
-// Used since Promise.resolve() will resolve too early
-function resolveLater(value, ms = 0) {
-  return new Promise((resolve) => setTimeout(() => resolve(value), ms));
-}
-
-// A fake users model that resembles what you might have for a database-backed application
-exports.users = {
-  staticUser: {
-    agreedToPolicy: false,
-    setPolicyAgreementAndSave(isAgreed) {
-      this.agreedToPolicy = isAgreed;
-      return resolveLater(this);
-    },
-    kudosCount: 0,
-    incrementKudosAndSave(reason) {
-      this.kudosCount += 1;
-      return resolveLater(this);
+const welcomeView = { blocks: [{
+    "type": "header",
+    "text": {
+        "type": "plain_text",
+        "text": "Welcome to eSwag! Choose the options below"
     }
-  },
-  findBySlackId() {
-    return resolveLater(this.staticUser, 50);
-  }
-}
+    },
+    {
+        "type": "actions",
+        "elements": [
+        {
+            "type": "button",
+            "text": {
+                "type": "plain_text",
+                "text": "List Products",
+                "emoji": true
+            },
+            "style": "primary",
+            "value": "list_products",
+            "action_id": "list_products"
+        },
+        {
+            "type": "button",
+            "text": {
+                "type": "plain_text",
+                "text": "Review Cart",
+                "emoji": true
+            },
+            "value": "review_cart",
+            "action_id": "review_cart"
+        },
+        {
+            "type": "button",
+            "text": {
+                "type": "plain_text",
+                "text": "Checkout",
+                "emoji": true
+            },
+            "value": "checkout",
+            "action_id": "checkout"
+        }
+    ]
+    }] 
+};
 
-exports.neighborhoods = {
-  apiUrl: 'https://data.sfgov.org/resource/6ia5-2f8k.json',
-  fuzzyFind(text) {
-    return axios({
-      url: this.apiUrl,
-      params: {
-        '$query': `SELECT name WHERE lower(name) LIKE '%${text.toLowerCase()}%'`,
-      },
-    }).then(response => response.data);
-  },
-  find(name) {
-    return axios({
-      url: this.apiUrl,
-      params: {
-        'name': name,
-      },
-    })
-    .then((response) => {
-      const result = response.data[0];
-      if (!result.link) {
-        result.link = `http://www.google.com/search?q=${encodeURIComponent(result.name)}`;
-      }
-      return result;
-    });
-  }
+const checkOutView = {
+	"blocks": [
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "*Success* \n \n Your order has been successfully submitted. \n \n "
+			}
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "Please download the receipt here:"
+			},
+			"accessory": {
+				"type": "button",
+				"text": {
+					"type": "plain_text",
+					"text": "Download receipt",
+					"emoji": true
+				},
+				"value": "click_me_123",
+				"url": "https://google.com",
+				"action_id": "button-action"
+			}
+		},
+		{
+			"type": "divider"
+		}
+	]
 }
