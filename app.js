@@ -1,6 +1,21 @@
 const { App, LogLevel } = require('@slack/bolt');
-const Products = require('./models/products.js');
-var products = new Products();
+const fs = require('fs');
+var products;
+
+fs.readFile('./data/products.json',
+// callback function that is called when reading file is done
+function(err, data) {       
+    // json data
+    console.log(data);
+    var jsonData = data;
+
+    // parse json
+    products = JSON.parse(jsonData);
+
+    // access elements
+    console.log(products.products[0].name + "'s sku number is " + products.products[0].sku);
+
+});
 
 const slackSigningSecret = '';
 const slackAccessToken = '';
