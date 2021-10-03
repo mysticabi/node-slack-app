@@ -1,5 +1,6 @@
 const { App, LogLevel } = require('@slack/bolt');
-const models = require('./models.js')
+const Products = require('./models/products.js');
+var products = new Products();
 
 const slackSigningSecret = '';
 const slackAccessToken = '';
@@ -18,6 +19,7 @@ const app = new App({
 app.command('/estore', async ({ command, ack, say,payload }) => {
     console.log('payload.trigger_id -----> ');
     console.log(payload.trigger_id);
+    console.log(products.products[0].name + "'s sku number is " + products.products[0].sku);
     await ack();
     say(welcomeView);
 });
@@ -38,7 +40,7 @@ app.action('checkout', async ({ body, ack, say }) => {
     await say (checkOutView);
 });
 
-//All constans below
+//All views below
 const cartView = 
     {
         "blocks": [

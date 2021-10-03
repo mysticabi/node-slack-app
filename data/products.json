@@ -1,4 +1,4 @@
-[
+{ "products": [
     {
       "sku": "eSwag00001",
       "image": "https://img.btdmp.com/10234/10234288/products/0x1296@16309131312915a5656f.jpeg",
@@ -29,72 +29,58 @@
     },
     {
       "sku": "eSwag00005",
-      "image": "http://placehold.it/32x32",
+      "image": "https://www.noblecollection.com/ItemImages/Thumbnails/TOY%20HP%207428.jpg",
       "brand": "ZOSIS",
       "name": "Miniature Shoes",
       "description": "Miniaturized wizard shoes made from Romanian Dragon bones"
     },
     {
       "sku": "eSwag00006",
-      "image": "http://placehold.it/32x32",
+      "image": "https://www.noblecollection.com/ItemImages/Thumbnails/PRP%20HP%207976.jpg",
       "brand": "ZOINAGE",
       "name": "Heartstring Wand",
       "description": "Legend's say that there are no wands like this. Makes a wizard unbeatable"
     },
     {
       "sku": "eSwag00007",
-      "image": "http://placehold.it/32x32",
+      "image": "https://www.noblecollection.com/ItemImages/Thumbnails/PRP%20HP%208689.jpg",
       "brand": "EMPIRICA",
       "name": "Triwizardy cup",
       "description": "A victory cup made of unobtanium"
     },
     {
       "sku": "eSwag00008",
-      "image": "http://placehold.it/32x32",
+      "image": "https://www.noblecollection.com/ItemImages/Thumbnails/JPC%20HP%208599.jpg",
       "brand": "GONKLE",
-      "name": "schroederfarmer@gonkle.com",
-      "description": " (928) 552-2738"
+      "name": "Felix felicis",
+      "description": "A replica of felix felicis potion pendant"
     },
     {
       "sku": "eSwag00009",
-      "image": "http://placehold.it/32x32",
+      "image": "https://www.noblecollection.com/ItemImages/Thumbnails/PRP%20HP%207968.jpg",
       "brand": "ROCKYARD",
-      "name": "schroederfarmer@rockyard.com",
-      "description": " (914) 590-2077"
+      "name": "Horcrux Locket",
+      "description": "One of the 7 horcruxes of Voldemort"
     },
     {
       "sku": "eSwag00010",
-      "image": "http://placehold.it/32x32",
+      "image": "https://www.noblecollection.com/ItemImages/Thumbnails/PRP%20HP%208177.jpg",
       "brand": "QNEKT",
-      "name": "schroederfarmer@qnekt.com",
-      "description": " (858) 534-3327"
+      "name": "The Horcrux Ring",
+      "description": "one of the 7 horcruxes of voldemort"
     },
     {
       "sku": "eSwag00011",
-      "image": "http://placehold.it/32x32",
+      "image": "https://www.noblecollection.com/ItemImages/Thumbnails/PRP%20HP%201009.jpg",
       "brand": "XPLOR",
-      "name": "schroederfarmer@xplor.com",
-      "description": " (851) 556-2741"
+      "name": "The Crystal Goblet",
+      "description": "Dumbledore's goblet against dark wizardry"
     },
     {
       "sku": "eSwag00012",
-      "image": "http://placehold.it/32x32",
+      "image": "https://www.noblecollection.com/ItemImages/Thumbnails/PRP%20HP%207268.jpg",
       "brand": "COMTEST",
-      "name": "schroederfarmer@comtest.com",
-      "description": " (932) 592-3828"
-    },
-    {
-      "sku": "eSwag00013",
-      "image": "http://placehold.it/32x32",
-      "brand": "TERRASYS",
-      "name": "schroederfarmer@terrasys.com",
-      "description": " (911) 536-3926"
-    },
-    {
-      "sku": "eSwag00014",
-      "image": "http://placehold.it/32x32",
-      "brand": "BEDDER",
-      "name": "schroederfarmer@bedder.com",
-      "description": " (968) 504-3391"
+      "name": "Deluminator",
+      "description": "Ron Weasley's Deluminator"
     }
-  ]
+  ]}
