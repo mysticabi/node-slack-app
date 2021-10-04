@@ -20,8 +20,8 @@ function(err, data) {
 
 
 // Slack App secrets and tokens. Move to environment variables.
-const slackSigningSecret = '4f5bc0a746b803da2eedc471ecd45d5c';
-const slackAccessToken = 'xoxb-2491257843379-2566898424480-CGXHcO3SWjQktQy59EdRyUW1';
+const slackSigningSecret = '';
+const slackAccessToken = '';
 const slackAppToken = '';
 
 // Initializes slack app on Bolt Framework.
