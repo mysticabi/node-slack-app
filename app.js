@@ -1,59 +1,81 @@
 const { App, LogLevel } = require('@slack/bolt');
+const { Product, Carts } = require('./models/classes.js');
 const fs = require('fs');
-var products;
 
+//Load products to the memory (acts as Catalog DB)
+var productsMap = new Map();
 fs.readFile('./data/products.json',
 // callback function that is called when reading file is done
 function(err, data) {       
     // json data
     console.log(data);
     var jsonData = data;
-
     // parse json
-    products = JSON.parse(jsonData);
-
-    // access elements
-    console.log(products.products[0].name + "'s sku number is " + products.products[0].sku);
-
+    JSON.parse(jsonData).products.forEach(i =>{
+        productsMap.set(i.sku, new Product(i.sku, i.name, i.description, i.brand, i.image, i.price));
+    });
+    productsMap.forEach(logMapElements);
+    
 });
 
-const slackSigningSecret = '';
-const slackAccessToken = '';
+
+// Slack App secrets and tokens. Move to environment variables.
+const slackSigningSecret = '4f5bc0a746b803da2eedc471ecd45d5c';
+const slackAccessToken = 'xoxb-2491257843379-2566898424480-CGXHcO3SWjQktQy59EdRyUW1';
 const slackAppToken = '';
 
-// Initializes your app with your bot token and signing secret
+// Initializes slack app on Bolt Framework.
 const app = new App({
   token: slackAccessToken,
   signingSecret: slackSigningSecret,
   logLevel: LogLevel.DEBUG,
-  //socketMode:true,
-  //appToken: slackAppToken
 });
 
-// Listens to incoming messages that contain "hello"
+// handler for slash command "/estore"
 app.command('/estore', async ({ command, ack, say,payload }) => {
-    console.log('payload.trigger_id -----> ');
-    console.log(payload.trigger_id);
-    console.log(products.products[0].name + "'s sku number is " + products.products[0].sku);
+    productsMap.forEach(logMapElements);
     await ack();
+    //show first view or welcome view.
     say(welcomeView);
 });
 
+//when "List Products" button is clicked 
+// show the different list of products
 app.action('list_products', async ({ body, ack, say }) => {
   await ack();
   await say(productListView);
 });
 
+//when "Review Cart" button is clicked 
 app.action('review_cart', async ({ body, ack, say }) => {
 await ack();
 await say(cartView);
 
 });
 
+
+//when "Check out" button is clicked 
 app.action('checkout', async ({ body, ack, say }) => {
     await ack();
     await say (checkOutView);
 });
+
+//when "Add to cart" button is clicked, 
+// /addtocart/ is a regex
+app.action(/addtocart/, async ({ body, payload,ack, say }) => {
+    await ack();
+    console.log(`User ${body.user.username} added ${body.actions[0].action_id} to cart`);
+    await say("added to cart");
+  });
+
+
+//All util functions below
+
+function logMapElements(value, key, map) {
+    console.log(`m[${key}] = ${value.name}`);
+  }
+
+
 
 //All views below
 const cartView = 
@@ -190,7 +212,7 @@ const cartView =
             }
         ]
     };
-const productListView = 
+var productListView = 
         {
             "blocks": [
                 {
@@ -229,7 +251,7 @@ const productListView =
                             "emoji": true
                         },
                         "value": "click_me_123",
-                        "action_id": "button-action"
+                        "action_id": "addtocart_1"
                     }
                 },
                 {
@@ -261,7 +283,7 @@ const productListView =
                             "emoji": true
                         },
                         "value": "click_me_123",
-                        "action_id": "button-action"
+                        "action_id": "addtocart_2"
                     }
                 },
                 {
@@ -293,7 +315,7 @@ const productListView =
                             "emoji": true
                         },
                         "value": "click_me_123",
-                        "action_id": "button-action"
+                        "action_id": "addtocart_3"
                     }
                 },
                 {
@@ -329,7 +351,7 @@ const welcomeView = { blocks: [{
     "type": "header",
     "text": {
         "type": "plain_text",
-        "text": "Welcome to eSwag! Choose the options below"
+        "text": "Welcome to eSwag! We have "+ productsMap.size +" wizardry products for you."
     }
     },
     {
@@ -411,3 +433,6 @@ const checkOutView = {
     await app.start(process.env.PORT || 3000);
     console.log('⚡️ Bolt app is running!');
 })();
+
+
+
