@@ -1,98 +1,98 @@
 { "products": [
-    {
-      "sku": "eSwag00001",
-      "image": "https://img.btdmp.com/10234/10234288/products/0x1296@16309131312915a5656f.jpeg",
-      "brand": "VALPREAL",
-      "name": "Witch Hat",
-      "description": "Straight from Godric's hollow, Halloween Special!",
-      "price": "3 Galleons"
-    },
-    {
-      "sku": "eSwag00002",
-      "image": "http://www.noblecollection.com/ItemImages/Thumbnails/PRP HP 8689.jpg",
-      "brand": "QUINTITY",
-      "name": "Brazilian leviosa",
-      "description": "Light roasted Single Origin Espresso coffee beans",
-      "price": "15 Galleons"
-    },
-    {
-      "sku": "eSwag00003",
-      "image": "https://www.noblecollection.com/ItemImages/Thumbnails/PRP%20HP%208689.jpg",
-      "brand": "ZILLANET",
-      "name": "Spider venom",
-      "description": "Makes magic potion to counter voldemort.",
-      "price": "50 Galleons"
-    },
-    {
-      "sku": "eSwag00004",
-      "image": "https://www.noblecollection.com/ItemImages/Thumbnails/TOY%20HP%207428.jpg",
-      "brand": "INSOURCE",
-      "name": "Blue Mug",
-      "description": "Coffee mug made of clay from Xabril",
-      "price": "5 Galleons"
-    },
-    {
-      "sku": "eSwag00005",
-      "image": "https://www.noblecollection.com/ItemImages/Thumbnails/TOY%20HP%207428.jpg",
-      "brand": "ZOSIS",
-      "name": "Miniature Shoes",
-      "description": "Miniaturized wizard shoes made from Romanian Dragon bones",
-      "price": "1.5 Galleons"
-    },
-    {
-      "sku": "eSwag00006",
-      "image": "https://www.noblecollection.com/ItemImages/Thumbnails/PRP%20HP%207976.jpg",
-      "brand": "ZOINAGE",
-      "name": "Heartstring Wand",
-      "description": "Legend's say that there are no wands like this. Makes a wizard unbeatable",
-      "price": "25 Galleons"
-    },
-    {
-      "sku": "eSwag00007",
-      "image": "https://www.noblecollection.com/ItemImages/Thumbnails/PRP%20HP%208689.jpg",
-      "brand": "EMPIRICA",
-      "name": "Triwizardy cup",
-      "description": "A victory cup made of unobtanium",
-      "price": "30 Galleons"
-    },
-    {
-      "sku": "eSwag00008",
-      "image": "https://www.noblecollection.com/ItemImages/Thumbnails/JPC%20HP%208599.jpg",
-      "brand": "GONKLE",
-      "name": "Felix felicis",
-      "description": "A replica of felix felicis potion pendant",
-      "price": "2 Galleons"
-    },
-    {
-      "sku": "eSwag00009",
-      "image": "https://www.noblecollection.com/ItemImages/Thumbnails/PRP%20HP%207968.jpg",
-      "brand": "ROCKYARD",
-      "name": "Horcrux Locket",
-      "description": "One of the 7 horcruxes of Voldemort",
-      "price": "8 Galleons"
-    },
-    {
-      "sku": "eSwag00010",
-      "image": "https://www.noblecollection.com/ItemImages/Thumbnails/PRP%20HP%208177.jpg",
-      "brand": "QNEKT",
-      "name": "The Horcrux Ring",
-      "description": "one of the 7 horcruxes of voldemort",
-      "price": "5 Galleons"
-    },
-    {
-      "sku": "eSwag00011",
-      "image": "https://www.noblecollection.com/ItemImages/Thumbnails/PRP%20HP%201009.jpg",
-      "brand": "XPLOR",
-      "name": "The Crystal Goblet",
-      "description": "Dumbledore's goblet against dark wizardry",
-      "price": "10 Galleons"
-    },
-    {
-      "sku": "eSwag00012",
-      "image": "https://www.noblecollection.com/ItemImages/Thumbnails/PRP%20HP%207268.jpg",
-      "brand": "COMTEST",
-      "name": "Deluminator",
-      "description": "Ron Weasley's Deluminator",
-      "price": "15 Galleons"
-    }
-  ]}
+  {
+    "sku": "eSwag00001",
+    "image": "https://img.btdmp.com/10234/10234288/products/0x1296@16309131312915a5656f.jpeg",
+    "brand": "VALPREAL",
+    "name": "Witch Hat",
+    "description": "Straight from Godric's hollow, Halloween Special!",
+    "price": "3"
+  },
+  {
+    "sku": "eSwag00002",
+    "image": "http://www.noblecollection.com/ItemImages/Thumbnails/PRP HP 8689.jpg",
+    "brand": "QUINTITY",
+    "name": "Brazilian leviosa",
+    "description": "Light roasted Single Origin Espresso coffee beans",
+    "price": "15"
+  },
+  {
+    "sku": "eSwag00003",
+    "image": "https://www.noblecollection.com/ItemImages/Thumbnails/PRP%20HP%208689.jpg",
+    "brand": "ZILLANET",
+    "name": "Spider venom",
+    "description": "Makes magic potion to counter voldemort.",
+    "price": "50"
+  },
+  {
+    "sku": "eSwag00004",
+    "image": "https://www.noblecollection.com/ItemImages/Thumbnails/TOY%20HP%207428.jpg",
+    "brand": "INSOURCE",
+    "name": "Blue Mug",
+    "description": "Coffee mug made of clay from Xabril",
+    "price": "5"
+  },
+  {
+    "sku": "eSwag00005",
+    "image": "https://www.noblecollection.com/ItemImages/Thumbnails/TOY%20HP%207428.jpg",
+    "brand": "ZOSIS",
+    "name": "Miniature Shoes",
+    "description": "Miniaturized wizard shoes made from Romanian Dragon bones",
+    "price": "1.5"
+  },
+  {
+    "sku": "eSwag00006",
+    "image": "https://www.noblecollection.com/ItemImages/Thumbnails/PRP%20HP%207976.jpg",
+    "brand": "ZOINAGE",
+    "name": "Heartstring Wand",
+    "description": "Legend's say that there are no wands like this. Makes a wizard unbeatable",
+    "price": "25"
+  },
+  {
+    "sku": "eSwag00007",
+    "image": "https://www.noblecollection.com/ItemImages/Thumbnails/PRP%20HP%208689.jpg",
+    "brand": "EMPIRICA",
+    "name": "Triwizardy cup",
+    "description": "A victory cup made of unobtanium",
+    "price": "30"
+  },
+  {
+    "sku": "eSwag00008",
+    "image": "https://www.noblecollection.com/ItemImages/Thumbnails/JPC%20HP%208599.jpg",
+    "brand": "GONKLE",
+    "name": "Felix felicis",
+    "description": "A replica of felix felicis potion pendant",
+    "price": "2"
+  },
+  {
+    "sku": "eSwag00009",
+    "image": "https://www.noblecollection.com/ItemImages/Thumbnails/PRP%20HP%207968.jpg",
+    "brand": "ROCKYARD",
+    "name": "Horcrux Locket",
+    "description": "One of the 7 horcruxes of Voldemort",
+    "price": "8"
+  },
+  {
+    "sku": "eSwag00010",
+    "image": "https://www.noblecollection.com/ItemImages/Thumbnails/PRP%20HP%208177.jpg",
+    "brand": "QNEKT",
+    "name": "The Horcrux Ring",
+    "description": "one of the 7 horcruxes of voldemort",
+    "price": "5"
+  },
+  {
+    "sku": "eSwag00011",
+    "image": "https://www.noblecollection.com/ItemImages/Thumbnails/PRP%20HP%201009.jpg",
+    "brand": "XPLOR",
+    "name": "The Crystal Goblet",
+    "description": "Dumbledore's goblet against dark wizardry",
+    "price": "10"
+  },
+  {
+    "sku": "eSwag00012",
+    "image": "https://www.noblecollection.com/ItemImages/Thumbnails/PRP%20HP%207268.jpg",
+    "brand": "COMTEST",
+    "name": "Deluminator",
+    "description": "Ron Weasley's Deluminator",
+    "price": "15"
+  }
+]}
