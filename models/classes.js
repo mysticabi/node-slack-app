@@ -64,4 +64,22 @@ class Product{
 
 }
 
-module.exports = {UsersContext, Product, Cart, User}
+class Order{
+
+    skuList;
+    userName;
+    cartTotal;
+    userID;
+
+    constructor(skuList, userName, cartTotal, userID){
+        this.skuList = skuList;
+        this.userName = userName;
+        this.cartTotal = cartTotal;
+        this.userID = userID;
+    }
+
+
+}
+
+
+module.exports = {UsersContext, Product, Cart, User, Order}

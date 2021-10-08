@@ -25,6 +25,7 @@
     "express": "^4.17.1",
     "http": "^0.0.1-security",
     "request": "^2.88.2",
-    "slack": "^11.0.2"
+    "slack": "^11.0.2",
+    "slack-block-builder": "^2.2.0"
   }
 }
