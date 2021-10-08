@@ -71,7 +71,7 @@ app.action('confirm_checkout', async ({ body, ack, client, say }) => {
     let userOrder = new Order(usersContext.userMap.get(userName).userCart.productList, userName, usersContext.userMap.get(userName).getCartTotal(), body.user.id);
     activeOrdersMap.set(userOrderNum, userOrder);
     client.chat.postMessage(omsMessage(userName, userOrder, userOrderNum));
-    const view = confirmationView(userName);
+    const view = confirmationView(userName, userOrderNum);
     client.views.update({view, view_id: body.view.id}); 
     client.chat.postMessage(sendConfirmationToUser(client, userOrderNum, userName, body.user.id));
     usersContext.userMap.delete(userName);
@@ -212,12 +212,12 @@ function checkoutView(userName) {
     .buildToObject();
 }
 
-function confirmationView(userName) {
+function confirmationView(userName, orderNum) {
     
     return Modal().title('Checkout Complete')
     .blocks(
         Blocks.Divider(),
-        Blocks.Section({ text: `${usersContext.userMap.get(userName).getCartTotal()} Galleons, will be deducted from your preferred payment method. \n You will be contacted by the fulfillment team soon! \nYour Order # is : ${orders}`}),               
+        Blocks.Section({ text: `${usersContext.userMap.get(userName).getCartTotal()} Galleons, will be deducted from your preferred payment method. \n You will be contacted by the fulfillment team soon! \nYour Order # is : ${orderNum}`}),               
         Blocks.Divider())
     .close('Done')
     .buildToObject();
@@ -316,6 +316,66 @@ function logMapElements(value, key, map) {
     console.log(`m[${key}] = ${value.name}`);
   }
 
+app.event("app_home_opened", async ({ payload, client }) => {
+    const userId = payload.user;
+    
+    try {
+      // Call the views.publish method using the WebClient passed to listeners
+      const result = await client.views.publish({
+        user_id: userId,
+        view: {
+          // Home tabs must be enabled in your app configuration page under "App Home"
+          "type": "home",
+          "blocks": [
+            {
+              "type": "section",
+              "text": {
+                "type": "mrkdwn",
+                "text": "*Welcome to the wizardry employee store, wizard <@" + userId + "> :male_mage:*"
+              }
+            },
+            {
+              "type": "divider"
+            },
+            {
+              "type": "section",
+              "text": {
+                "type": "mrkdwn",
+                "text": "A magical place where you can buy wizard's products magically and it will be delivered to you!"
+              }
+            },
+            {
+              "type": "divider"
+            },
+            {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": "\n\n Use command *\"/estore\"* to enter the Harry Potter's magical world!"
+                }
+            },
+            {
+            "type": "divider"
+            },
+            {
+              "type": "context",
+              "elements": [
+                {
+                  "type": "mrkdwn",
+                  "text": "Let the magic begin!! :magic_wand:"
+                }
+              ]
+            }
+          ]
+        }
+      });
+  
+      console.log(result);
+    }
+    catch (error) {
+      console.error(error);
+    }
+});
         
 (async () => {
     //Load products to the memory (acts as Catalog DB)
