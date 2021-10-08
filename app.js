@@ -15,7 +15,7 @@ let usersContext = new UsersContext();
 
 // Slack App secrets and tokens. Move to environment variables.
 const slackSigningSecret = '4f5bc0a746b803da2eedc471ecd45d5c';
-const slackAccessToken = 'xoxb-2491257843379-2566898424480-8sVdAdPXIxbQxZVcZiBRKZ6l';
+const slackAccessToken = '';
 const slackAppToken = '';
 
 // Initializes slack app on Bolt Framework.
@@ -296,7 +296,7 @@ function omsMessage(userName, userOrder, userOrderNum){
     });
 
     return Message()
-    .channel('C02FW7MJT53')
+    .channel('C02H4A7FEN9')
     .text(`${userName}'s order: ${userOrderNum}'`)
     .blocks(
       Blocks.Section()
