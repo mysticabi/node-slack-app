@@ -1,3 +1,5 @@
+
+// this file exports classes needed for eSwag store app.
 class UsersContext{
 
     userMap;
